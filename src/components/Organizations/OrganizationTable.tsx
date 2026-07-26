@@ -13,6 +13,10 @@ import {
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
+interface OrganizationTableProps {
+  search: string;
+}
+
 const organizations = [
   {
     id: 1,
@@ -37,7 +41,11 @@ const organizations = [
   },
 ];
 
-function OrganizationTable() {
+function OrganizationTable({ search }: OrganizationTableProps) {
+  const filteredOrganizations = organizations.filter((organization) =>
+    organization.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <TableContainer component={Paper} sx={{ mt: 4 }}>
       <Table>
@@ -62,7 +70,7 @@ function OrganizationTable() {
         </TableHead>
 
         <TableBody>
-          {organizations.map((organization) => (
+          {filteredOrganizations.map((organization) => (
             <TableRow key={organization.id}>
               <TableCell>{organization.name}</TableCell>
               <TableCell>{organization.users}</TableCell>

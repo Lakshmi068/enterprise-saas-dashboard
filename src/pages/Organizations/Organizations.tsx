@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -12,6 +13,7 @@ import DashboardLayout from "../../layouts/DashboardLayout";
 import OrganizationTable from "../../components/Organizations/OrganizationTable";
 
 function Organizations() {
+  const [search, setSearch] = useState("");
   return (
     <DashboardLayout>
       <Stack
@@ -45,12 +47,14 @@ function Organizations() {
       </Stack>
 
       <TextField
-        fullWidth
-        label="Search Organizations"
-        placeholder="Search by organization name..."
-      />
+  fullWidth
+  label="Search Organizations"
+  placeholder="Search by organization name..."
+  value={search}
+  onChange={(event) => setSearch(event.target.value)}
+/>
 
-      <OrganizationTable />
+      <OrganizationTable search={search} />
     </DashboardLayout>
   );
 }
