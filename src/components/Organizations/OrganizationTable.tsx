@@ -8,40 +8,29 @@ import {
   TableRow,
   Chip,
   IconButton,
-} from "@mui/material";
+} 
+from "@mui/material";
 
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-interface OrganizationTableProps {
-  search: string;
+interface Organization {
+  id: number;
+  name: string;
+  users: number;
+  plan: string;
+  status: string;
 }
-
-const organizations = [
-  {
-    id: 1,
-    name: "OpenAI",
-    users: 250,
-    plan: "Enterprise",
-    status: "Active",
-  },
-  {
-    id: 2,
-    name: "Microsoft",
-    users: 1200,
-    plan: "Premium",
-    status: "Active",
-  },
-  {
-    id: 3,
-    name: "Amazon",
-    users: 3500,
-    plan: "Enterprise",
-    status: "Active",
-  },
-];
-
-function OrganizationTable({ search }: OrganizationTableProps) {
+interface OrganizationTableProps {
+  organizations: Organization[];
+  search: string;
+  onEdit: (organization: Organization) => void;
+}
+function OrganizationTable({
+  organizations,
+  search,
+  onEdit,
+}: OrganizationTableProps) {
   const filteredOrganizations = organizations.filter((organization) =>
     organization.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -85,9 +74,12 @@ function OrganizationTable({ search }: OrganizationTableProps) {
               </TableCell>
 
               <TableCell align="center">
-                <IconButton color="primary">
-                  <EditIcon />
-                </IconButton>
+                <IconButton
+  color="primary"
+  onClick={() => onEdit(organization)}
+>
+  <EditIcon />
+</IconButton>
 
                 <IconButton color="error">
                   <DeleteIcon />
