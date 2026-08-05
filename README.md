@@ -1,75 +1,151 @@
-# React + TypeScript + Vite
+# 🚀 Enterprise SaaS Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based Enterprise SaaS Dashboard built using **React, TypeScript, Material UI, Axios, and React Router**.
 
-Currently, two official plugins are available:
+This application serves as the frontend for the Enterprise SaaS Platform and demonstrates modern UI development, reusable components, authentication flows, API integration, and responsive dashboard design.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+# ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🔐 Authentication
 
-## Expanding the ESLint configuration
+- Login
+- Registration
+- JWT Authentication
+- Protected Routes
+- Auth Context
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📊 Dashboard
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Responsive Dashboard
+- Statistics Cards
+- Material UI Design
+- Clean Enterprise Layout
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
 
-```
+## 🏢 Organization Management
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- View Organizations
+- Create Organization
+- Update Organization
+- Delete Organization
+- Search Organizations
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 💳 Subscription Management
+
+- View Subscriptions
+- Create Subscription
+- Organization Selection
+- Plan Management
+
+---
+
+# 🛠 Tech Stack
+
+### Frontend
+
+- React 19
+- TypeScript
+- Material UI
+- React Router
+- Axios
+
+### Backend Integration
+
+- Spring Boot REST APIs
+- JWT Authentication
+- Stripe Integration
+
+---
+
+# 📁 Project Structure
 
 ```
+src/
+│
+├── api/
+├── components/
+├── contexts/
+├── hooks/
+├── layouts/
+├── pages/
+│   ├── Dashboard
+│   ├── Login
+│   ├── Register
+│   ├── Organizations
+│   └── Subscription
+├── routes/
+├── theme/
+└── types/
+```
+
+---
+
+# 🎯 Screens
+
+- Login
+- Register
+- Dashboard
+- Organizations
+- Subscription Management
+
+---
+
+# 🔌 API Integration
+
+The dashboard integrates with the Spring Boot backend using Axios.
+
+Main API modules:
+
+- Authentication API
+- Organization API
+- Subscription API
+
+---
+
+# 🚀 Run the Project
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start development server
+
+```bash
+npm run dev
+```
+
+---
+
+# 🌟 Future Enhancements
+
+- AI-powered Dashboard Insights
+- ChatGPT Assistant for Admins
+- Role-Based Access Control (RBAC)
+- Analytics & Reports
+- Dark Mode
+- Notifications
+- Multi-Tenant UI
+- RAG-powered Knowledge Assistant
+- Spring AI Integration
+
+---
+
+# 👩‍💻 Author
+
+**Lakshmi Padmavathi Devara**
+
+- GitHub: https://github.com/Lakshmi068
+- LinkedIn: https://www.linkedin.com/in/lakshmipadmavathi/
+
+---
+
+⭐ If you found this project helpful, please consider giving it a star!
